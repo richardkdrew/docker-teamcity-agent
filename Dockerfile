@@ -6,11 +6,12 @@ MAINTAINER Richard Drew <richardkdrew@gmail.com>
 
 RUN groupadd -g 999 teamcity \
     && useradd -u 999 -g teamcity -m teamcity \
-    && mkdir -p /opt/TeamCity && chown teamcity:teamcity /opt/TeamCity
+    && mkdir -p /opt/TeamCity \
+    && chown teamcity:teamcity /opt/TeamCity
 
 USER teamcity
 
-COPY runAgent /opt/TeamCity/
+COPY runAgent /opt/TeamCity/runAgent
 
 VOLUME ["/home/teamcity"]
 
