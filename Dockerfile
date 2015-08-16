@@ -18,6 +18,7 @@ RUN groupadd -g 999 teamcity \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
+        bzip2 \
 # do some clean-up
     && apt-get -y autoremove \
     && apt-get clean
